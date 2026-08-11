@@ -1,0 +1,654 @@
+/* =====================================================
+CONFIGURAÇÃO GERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        180deg,
+        #fff0f6 0%,
+        #fff8fb 50%,
+        #ffffff 100%
+    );
+    color: #333;
+}
+
+/* =====================================================
+CABEÇALHO
+===================================================== */
+
+header {
+    text-align: center;
+    padding: 30px 15px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #f8a5c2,
+        #e889ad
+    );
+
+    color: white;
+
+    border-radius: 0 0 25px 25px;
+
+    box-shadow:
+        0 4px 15px rgba(200, 80, 120, 0.20);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 17px;
+}
+
+/* =====================================================
+CONTEÚDO
+===================================================== */
+
+main {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #c94f7c;
+}
+
+/* =====================================================
+PRODUTOS
+===================================================== */
+
+#produtos {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.produto {
+    padding: 20px;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #f3c8d8;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px rgba(180, 70, 110, 0.12);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.produto:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(180, 70, 110, 0.18);
+}
+
+.produto img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    display: block;
+
+    margin: 0;
+
+    background: #fff8fb;
+}
+
+.produto h3 {
+    margin: 12px 0 8px;
+    font-size: 21px;
+    color: #b83f6d;
+}
+
+.produto p {
+    margin: 8px 0;
+}
+
+.produto p strong {
+    color: #c63f70;
+    font-size: 21px;
+}
+
+/* =====================================================
+TAMANHO
+===================================================== */
+
+.produto select {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    border: 1px solid #e5b4c8;
+
+    background: #fff;
+
+    font-size: 16px;
+
+    color: #555;
+}
+
+/* =====================================================
+BOTÃO ADICIONAR AO CARRINHO
+===================================================== */
+
+.produto button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #e53958,
+        #c91f43
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 9px rgba(190, 30, 70, 0.25);
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+.produto button:hover {
+    background: linear-gradient(
+        135deg,
+        #d82d4c,
+        #b7193b
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 17px rgba(190, 30, 70, 0.35);
+}
+
+.produto button:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+BOTÃO MEU CARRINHO
+===================================================== */
+
+#abrir-carrinho {
+    display: block;
+
+    width: 90%;
+
+    max-width: 280px;
+
+    margin: 20px auto 10px;
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #e53958,
+        #c91f43
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 9px rgba(190, 30, 70, 0.25);
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+#abrir-carrinho:hover {
+    background: linear-gradient(
+        135deg,
+        #d82d4c,
+        #b7193b
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 17px rgba(190, 30, 70, 0.35);
+}
+
+#abrir-carrinho:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+CARRINHO
+===================================================== */
+
+#carrinho {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #f0c5d6;
+
+    box-shadow:
+        0 5px 18px rgba(180, 70, 110, 0.10);
+}
+
+#carrinho h2 {
+    color: #c94f7c;
+}
+
+.item-carrinho {
+    margin-bottom: 15px;
+
+    padding: 16px;
+
+    border-radius: 13px;
+
+    border: 1px solid #efd1dc;
+
+    background: #fff8fb;
+}
+
+.item-carrinho strong {
+    font-size: 18px;
+    color: #b83f6d;
+}
+
+.item-carrinho button {
+    margin: 5px 7px;
+
+    padding: 7px 13px;
+
+    border: 1px solid #e2b5c7;
+
+    border-radius: 7px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.item-carrinho button:hover {
+    background: #fde5ef;
+}
+
+#total-carrinho {
+    font-size: 23px;
+    color: #c63f70;
+}
+
+/* =====================================================
+BOTÕES DE NAVEGAÇÃO
+===================================================== */
+
+/*
+   CONTINUAR COMPRANDO
+   E
+   CONTINUAR PARA ENTREGA
+
+   Agora os dois terão exatamente
+   o mesmo tamanho e aparência
+   do botão MEU CARRINHO.
+*/
+
+#voltar-produtos,
+#ir-entrega {
+    display: block;
+
+    width: 90%;
+
+    max-width: 280px;
+
+    margin: 20px auto 10px;
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #e53958,
+        #c91f43
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 9px rgba(190, 30, 70, 0.25);
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+/* =====================================================
+HOVER DOS BOTÕES
+===================================================== */
+
+#voltar-produtos:hover,
+#ir-entrega:hover {
+    background: linear-gradient(
+        135deg,
+        #d82d4c,
+        #b7193b
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 17px rgba(190, 30, 70, 0.35);
+}
+
+/* =====================================================
+CLIQUE
+===================================================== */
+
+#voltar-produtos:active,
+#ir-entrega:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+DADOS DA CLIENTE
+===================================================== */
+
+#dados-cliente {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #fff8fb;
+
+    border: 1px solid #f0cbd9;
+}
+
+#dados-cliente h2 {
+    margin-top: 5px;
+}
+
+#dados-cliente label {
+    display: block;
+
+    margin-top: 13px;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+#dados-cliente input,
+#dados-cliente textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #dfb8c9;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    background: white;
+}
+
+#dados-cliente input:focus,
+#dados-cliente textarea:focus,
+.produto select:focus {
+    outline: none;
+
+    border-color: #df6f9b;
+
+    box-shadow:
+        0 0 0 3px rgba(223, 111, 155, 0.12);
+}
+
+#dados-cliente textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.opcional {
+    font-weight: normal;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+/* =====================================================
+BOTÃO WHATSAPP
+===================================================== */
+
+#finalizar-whatsapp {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+
+    margin: 15px auto 10px;
+    padding: 17px 20px;
+
+    background: #25D366;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+#finalizar-whatsapp:hover {
+    background: #1ebe5d;
+}
+
+#finalizar-whatsapp:hover {
+    background: linear-gradient(
+        135deg,
+        #20bd5b,
+        #12823d
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 17px rgba(30, 150, 70, 0.35);
+}
+
+#finalizar-whatsapp:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    header {
+        padding: 25px 12px;
+
+        border-radius: 0 0 20px 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    main {
+        width: 100%;
+
+        margin: 18px auto;
+
+        padding: 0 10px;
+    }
+
+    #produtos {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .produto {
+        padding: 16px;
+    }
+
+    .produto img {
+        height: 280px;
+    }
+
+    .produto h3 {
+        font-size: 20px;
+    }
+
+    /* Botões principais no celular */
+
+    #abrir-carrinho,
+    #voltar-produtos,
+    #ir-entrega {
+        width: 90%;
+
+        max-width: 280px;
+
+        min-height: 54px;
+
+        font-size: 18px;
+    }
+
+    #finalizar-whatsapp {
+        min-height: 54px;
+
+        font-size: 18px;
+    }
+
+    #carrinho {
+        padding: 16px;
+
+        margin-top: 25px;
+    }
+
+    .item-carrinho {
+        padding: 13px;
+    }
+
+    #dados-cliente {
+        padding: 15px;
+    }
+
+    #finalizar-whatsapp {
+        font-size: 17px;
+    }
+}
+/* =====================================================
+BOTÃO ← VOLTAR AO CARRINHO
+===================================================== */
+
+#voltar-carrinho {
+    display: block;
+    width: 90%;
+    max-width: 280px;
+    margin: 15px auto 10px;
+    padding: 17px 20px;
+
+    background: #e91e63;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#voltar-carrinho:hover {
+    background: #d81b60;
+    transform: translateY(-1px);
+}
