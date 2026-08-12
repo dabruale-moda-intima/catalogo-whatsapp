@@ -107,7 +107,76 @@ onValue(produtosRef, function(snapshot) {
     }
 
     mostrarProdutos();
+// =====================================================
+// ABRIR PRODUTO INDIVIDUAL PELO LINK
+// =====================================================
 
+const parametros = new URLSearchParams(window.location.search);
+const produtoId = parametros.get("produto");
+
+if (produtoId) {
+
+    const produtoIndividual = produtos.find(function(produto) {
+        return produto.id === produtoId;
+    });
+
+    if (produtoIndividual) {
+
+        const container = document.getElementById("produtos");
+
+        if (container) {
+            container.innerHTML = "";
+        }
+
+        const div = document.createElement("div");
+        div.className = "produto";
+
+        if (produtoIndividual.foto) {
+
+            const imagem = document.createElement("img");
+
+            imagem.src = produtoIndividual.foto;
+            imagem.alt = produtoIndividual.nome;
+
+            imagem.style.width = "100%";
+            imagem.style.maxWidth = "300px";
+            imagem.style.height = "300px";
+            imagem.style.objectFit = "contain";
+            imagem.style.borderRadius = "12px";
+            imagem.style.display = "block";
+            imagem.style.margin = "0 auto 15px";
+
+            div.appendChild(imagem);
+        }
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = produtoIndividual.nome;
+        div.appendChild(titulo);
+
+        const preco = document.createElement("p");
+
+        preco.innerHTML =
+            "<strong>R$ " +
+            produtoIndividual.preco
+                .toFixed(2)
+                .replace(".", ",") +
+            "</strong>";
+
+        div.appendChild(preco);
+
+        if (produtoIndividual.descricao) {
+
+            const descricao = document.createElement("p");
+
+            descricao.textContent =
+                produtoIndividual.descricao;
+
+            div.appendChild(descricao);
+        }
+
+        container.appendChild(div);
+    }
+}
 });
 
 
