@@ -90,13 +90,11 @@ const voltarCarrinho =
 // =====================================================
 // URL DO PRODUTO INDIVIDUAL
 // =====================================================
-
 const parametros =
     new URLSearchParams(window.location.search);
 
-const codigoProduto =
-    parametros.get("p");
-
+const produtoId =
+    parametros.get("produto");
 
 // =====================================================
 // CARREGAR PRODUTOS DO FIREBASE
