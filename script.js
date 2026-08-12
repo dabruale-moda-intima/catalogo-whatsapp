@@ -656,7 +656,8 @@ function abrirProduto(id) {
 // =====================================================
 // PRODUTO INDIVIDUAL
 // =====================================================
-
+function mostrarProdutoIndividual() {
+    
 const produto =
     produtos.find(function(item) {
 
