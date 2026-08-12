@@ -656,14 +656,15 @@ function mostrarProdutoIndividual() {
         return;
     }
 
-
     const produto =
         produtos.find(function(item) {
 
-            return item.id === produtoId;
+            return (
+                item.id === produtoId ||
+                gerarCodigoProduto(item.nome) === produtoId
+            );
 
         });
-
 
     if (!produto) {
 
@@ -673,7 +674,6 @@ function mostrarProdutoIndividual() {
         return;
 
     }
-
 
     // =================================================
     // TIRAR O GRID DA PÁGINA INDIVIDUAL
@@ -688,7 +688,6 @@ function mostrarProdutoIndividual() {
     containerProdutos.innerHTML =
         "";
 
-
     // =================================================
     // CARD INDIVIDUAL
     // =================================================
@@ -696,17 +695,15 @@ function mostrarProdutoIndividual() {
     const div =
         document.createElement("div");
 
-
     div.className =
         "produto produto-individual";
-
 
     div.style.maxWidth =
         "420px";
 
     div.style.margin =
         "20px auto";
-
+   
 
     // =================================================
     // BOTÃO CONTINUAR COMPRANDO
