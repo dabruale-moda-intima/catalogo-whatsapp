@@ -94,8 +94,8 @@ const voltarCarrinho =
 const parametros =
     new URLSearchParams(window.location.search);
 
-const produtoId =
-    parametros.get("produto");
+const codigoProduto =
+    parametros.get("p");
 
 
 // =====================================================
