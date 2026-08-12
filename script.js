@@ -217,7 +217,7 @@ onValue(produtosRef, function(snapshot) {
 
 function mostrarPagina() {
 
-    if (produtoId) {
+    if (produtoCodigo) {
 
         mostrarProdutoIndividual();
 
