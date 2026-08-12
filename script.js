@@ -93,7 +93,7 @@ const voltarCarrinho =
 const parametros =
     new URLSearchParams(window.location.search);
 
-const produtoCodigo =
+const produtoId =
     parametros.get("produto");
 // =====================================================
 // CARREGAR PRODUTOS DO FIREBASE
@@ -645,10 +645,12 @@ function abrirProduto(id) {
     const codigo =
         gerarCodigoProduto(produto.nome);
 
+   function abrirProduto(id) {
+
     window.location.href =
         window.location.pathname +
         "?produto=" +
-        encodeURIComponent(codigo);
+        encodeURIComponent(id);
 
 }
 
@@ -661,13 +663,9 @@ function mostrarProdutoIndividual() {
 const produto =
     produtos.find(function(item) {
 
-        return (
-            gerarCodigoProduto(item.nome) ===
-            produtoCodigo
-        );
+        return item.id === produtoId;
 
     });
-
 
     if (!produto) {
 
