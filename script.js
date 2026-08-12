@@ -2030,43 +2030,38 @@ function finalizarPedido() {
 
     }
 
+// =================================================
+// OBSERVAÇÃO
+// =================================================
 
-    // =================================================
-    // OBSERVAÇÃO
-    // =================================================
+if (observacao) {
 
-    if (observacao) {
-
-        mensagem +=
-            "\nObservação: " +
-            observacao;
-
-    }
-
-
-    // =================================================
-    // WHATSAPP
-    // =================================================
-
-    const numeroWhatsApp =
-        "5565996719068";
-
-
-    const url =
-        "https://api.whatsapp.com/send?phone=" +
-        numeroWhatsApp +
-        "&text=" +
-        encodeURIComponent(
-            mensagem
-        );
-
-
-    window.open(
-        url,
-        "_blank"
-    );
+    mensagem +=
+        "\nObservação: " +
+        observacao;
 
 }
+
+
+// =================================================
+// WHATSAPP
+// =================================================
+
+const numeroWhatsApp =
+    "5565996719068";
+
+const url =
+    "https://api.whatsapp.com/send?phone=" +
+    numeroWhatsApp +
+    "&text=" +
+    encodeURIComponent(
+        mensagem
+    );
+
+window.open(
+    url,
+    "_blank"
+);
 
 
 // =====================================================
@@ -2077,7 +2072,6 @@ const botaoWhatsApp =
     document.getElementById(
         "finalizar-whatsapp"
     );
-
 
 if (botaoWhatsApp) {
 
