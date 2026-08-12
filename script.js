@@ -624,11 +624,24 @@ function abrirProduto(id) {
         return;
     }
 
+    const produto =
+        produtos.find(function(item) {
+
+            return item.id === id;
+
+        });
+
+    if (!produto) {
+        return;
+    }
+
+    const codigo =
+        gerarCodigoProduto(produto.nome);
 
     window.location.href =
         window.location.pathname +
         "?produto=" +
-        encodeURIComponent(id);
+        encodeURIComponent(codigo);
 
 }
 
