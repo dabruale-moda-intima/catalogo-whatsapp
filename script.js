@@ -93,9 +93,8 @@ const voltarCarrinho =
 const parametros =
     new URLSearchParams(window.location.search);
 
-const produtoId =
+const produtoCodigo =
     parametros.get("produto");
-
 // =====================================================
 // CARREGAR PRODUTOS DO FIREBASE
 // =====================================================
@@ -617,12 +616,39 @@ function mostrarTodosProdutos() {
 // ABRIR PRODUTO INDIVIDUAL
 // =====================================================
 
+function gerarCodigoProduto(nome) {
+
+    return nome
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+}
+
+
 function abrirProduto(id) {
+
+    const produto =
+        produtos.find(function(item) {
+
+            return item.id === id;
+
+        });
+
+    if (!produto) {
+        return;
+    }
+
+    const codigo =
+        gerarCodigoProduto(produto.nome);
 
     window.location.href =
         window.location.pathname +
         "?produto=" +
-        encodeURIComponent(id);
+        encodeURIComponent(codigo);
 
 }
 
@@ -631,19 +657,15 @@ function abrirProduto(id) {
 // PRODUTO INDIVIDUAL
 // =====================================================
 
-function mostrarProdutoIndividual() {
+const produto =
+    produtos.find(function(item) {
 
-    if (!containerProdutos) {
-        return;
-    }
+        return (
+            gerarCodigoProduto(item.nome) ===
+            produtoCodigo
+        );
 
-
-    const produto =
-        produtos.find(function(item) {
-
-            return item.id === produtoId;
-
-        });
+    });
 
 
     if (!produto) {
