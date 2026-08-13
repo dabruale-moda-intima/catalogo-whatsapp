@@ -619,14 +619,15 @@ function mostrarTodosProdutos() {
 // ABRIR PRODUTO INDIVIDUAL
 // =====================================================
 
-function abrirProduto(id) {
+function abrirProduto(codigo) {
 
     window.location.href =
         window.location.pathname +
         "?produto=" +
-        encodeURIComponent(id);
+        encodeURIComponent(codigo);
 
 }
+
 
 
 // =====================================================
