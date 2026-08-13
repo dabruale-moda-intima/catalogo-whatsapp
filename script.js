@@ -328,7 +328,7 @@ function mostrarTodosProdutos() {
                 "click",
                 function() {
 
-                    abrirProduto(produto.id);
+                    abrirProduto(produto.nome);
 
                 }
             );
@@ -387,7 +387,7 @@ function mostrarTodosProdutos() {
             "click",
             function() {
 
-                abrirProduto(produto.id);
+                abrirProduto(produto.nome);
 
             }
         );
