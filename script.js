@@ -645,19 +645,6 @@ function abrirProduto(nome) {
 
 }
 
-// =====================================================
-// ABRIR PRODUTO INDIVIDUAL
-// =====================================================
-
-function abrirProduto(codigo) {
-
-    window.location.href =
-        window.location.pathname +
-        "?produto=" +
-        encodeURIComponent(codigo);
-
-}
-
 
 
 // =====================================================
