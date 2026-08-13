@@ -14,7 +14,7 @@ import {
 const firebaseConfig = {
 
     // ⚠️ MANTENHA SUA API KEY ORIGINAL
-    apiKey: "SUA_API_KEY_ORIGINAL",
+    apiKey: "AIzaSyCtNeIuSYRRP8xSgfda0KXHpuZwNtLrN7g",
 
     authDomain: "dabruale-moda-intima.firebaseapp.com",
 
@@ -543,7 +543,42 @@ function mostrarTodosProdutos() {
             );
 
         }
+        // =================================================
+        // BOTÃO EDITAR PRODUTO
+        // =================================================
 
+        const botaoEditar =
+            document.createElement("button");
+
+
+        botaoEditar.type =
+            "button";
+
+
+        botaoEditar.textContent =
+            "✏️ Editar";
+
+
+        botaoEditar.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+
+                window.location.href =
+                    "cadastro.html?id=" +
+                    encodeURIComponent(
+                        produto.id
+                    );
+
+            }
+        );
+
+
+        div.appendChild(
+            botaoEditar
+        );
 
         // =================================================
         // BOTÃO ADICIONAR AO CARRINHO
