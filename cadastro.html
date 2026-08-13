@@ -1,341 +1,767 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DABRUALE MODA ÍNTIMA - Cadastrar Produto</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f7f7f7;
-        margin: 0;
-        padding: 20px;
-    }
+    <title>DABRUALE MODA ÍNTIMA - Cadastro</title>
 
-    .container {
-        max-width: 700px;
-        margin: auto;
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+    <style>
 
-    h1,
-    h2 {
-        text-align: center;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    label {
-        display: block;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
+        body {
 
-    input,
-    textarea {
-        width: 100%;
-        padding: 12px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 16px;
-    }
+            font-family: Arial, sans-serif;
 
-    textarea {
-        min-height: 100px;
-        resize: vertical;
-    }
+            background: #f7f7f7;
 
-    .tamanhos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-    }
+            margin: 0;
 
-    .tamanhos label {
-        background: #f0f0f0;
-        padding: 10px;
-        border-radius: 8px;
-        margin: 0;
-        font-weight: normal;
-    }
+            padding: 20px;
 
-    .tamanhos input {
-        width: auto;
-    }
+        }
 
-    button {
-        width: 100%;
-        margin-top: 20px;
-        padding: 14px;
-        border: none;
-        border-radius: 8px;
-        font-size: 17px;
-        cursor: pointer;
-        background: #25D366;
-        color: white;
-    }
+        .container {
 
-    button:hover {
-        opacity: 0.9;
-    }
+            max-width: 700px;
 
-    button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
+            margin: auto;
 
-    .voltar {
-        background: #555;
-    }
+            background: white;
 
-    #mensagem {
-        margin-top: 20px;
-        padding: 12px;
-        border-radius: 8px;
-        display: none;
-        text-align: center;
-        font-weight: bold;
-    }
+            padding: 25px;
 
-    .opcional {
-        color: #777;
-        font-weight: normal;
-        font-size: 14px;
-    }
+            border-radius: 15px;
 
-    .preview {
-        margin-top: 15px;
-        text-align: center;
-        display: none;
-    }
+            box-shadow:
+                0 2px 10px
+                rgba(0, 0, 0, 0.1);
 
-    .preview img {
-        max-width: 250px;
-        max-height: 250px;
-        object-fit: contain;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-    }
-</style>
+        }
 
+        h1,
+        h2 {
+
+            text-align: center;
+
+        }
+
+        h1 {
+
+            color: #c2185b;
+
+        }
+
+        label {
+
+            display: block;
+
+            margin-top: 15px;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            box-sizing: border-box;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+        }
+
+        textarea {
+
+            min-height: 100px;
+
+            resize: vertical;
+
+        }
+
+        .tamanhos {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 10px;
+
+        }
+
+        .tamanhos label {
+
+            background: #f0f0f0;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            margin: 0;
+
+            font-weight: normal;
+
+        }
+
+        .tamanhos input {
+
+            width: auto;
+
+        }
+
+        button {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #c2185b
+                );
+
+            color: white;
+
+            font-weight: bold;
+
+        }
+
+        button:hover {
+
+            opacity: 0.9;
+
+        }
+
+        button:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+        }
+
+        .voltar {
+
+            background: #555;
+
+        }
+
+        .cancelar {
+
+            background: #777;
+
+        }
+
+        #mensagem {
+
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            display: none;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+        .opcional {
+
+            color: #777;
+
+            font-weight: normal;
+
+            font-size: 14px;
+
+        }
+
+        .preview {
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            display: none;
+
+            padding: 15px;
+
+            background: #fafafa;
+
+            border-radius: 12px;
+
+        }
+
+        .preview img {
+
+            width: 250px;
+
+            height: 250px;
+
+            max-width: 100%;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            border: 1px solid #ddd;
+
+        }
+
+        .modo-edicao {
+
+            background: #fff3cd;
+
+            color: #856404;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+        }
+
+        .foto-area {
+
+            margin-top: 10px;
+
+            padding: 15px;
+
+            background: #fafafa;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+        }
+
+        .foto-area p {
+
+            margin-top: 0;
+
+            font-weight: bold;
+
+        }
+
+        .botao-foto {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #c2185b
+                );
+
+            text-align: center;
+
+            cursor: pointer;
+
+        }
+
+        .botao-foto input {
+
+            display: none;
+
+        }
+
+        .separador-foto {
+
+            text-align: center;
+
+            margin: 15px 0;
+
+            color: #777;
+
+            font-weight: bold;
+
+        }
+
+        .upload-status {
+
+            display: none;
+
+            margin-top: 10px;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            background: #fff3cd;
+
+            color: #856404;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
 
-<h1>🛍️ DABRUALE MODA ÍNTIMA</h1>
+    <h1>
+        🛍️ DABRUALE MODA ÍNTIMA
+    </h1>
 
-<h2>➕ Cadastrar Produto</h2>
 
-<!-- NOME -->
+    <h2 id="titulo-pagina">
+        ➕ Cadastrar Produto
+    </h2>
 
-<label for="nome">
-    Nome do produto *
-</label>
 
-<input
-    type="text"
-    id="nome"
-    placeholder="Ex.: Conjunto Renda"
->
+    <div
+        id="aviso-edicao"
+        class="modo-edicao"
+        style="display:none;"
+    >
+        ✏️ Você está editando um produto existente.
+    </div>
 
-<!-- PREÇO -->
 
-<label for="preco">
-    Preço *
-</label>
+    <!-- ================================================= -->
+    <!-- NOME -->
+    <!-- ================================================= -->
 
-<input
-    type="number"
-    id="preco"
-    step="0.01"
-    min="0"
-    placeholder="Ex.: 39.90"
->
+    <label for="nome">
+        Nome do produto *
+    </label>
 
-<!-- ESTOQUE -->
+    <input
+        type="text"
+        id="nome"
+        placeholder="Ex.: Conjunto Renda"
+    >
 
-<label for="estoque">
-    Quantidade em estoque
-    <span class="opcional">(opcional)</span>
-</label>
 
-<input
-    type="number"
-    id="estoque"
-    min="0"
-    step="1"
-    placeholder="Ex.: 10"
->
+    <!-- ================================================= -->
+    <!-- PREÇO -->
+    <!-- ================================================= -->
 
-<!-- DESCRIÇÃO -->
+    <label for="preco">
+        Preço *
+    </label>
 
-<label for="descricao">
-    Descrição
-    <span class="opcional">(opcional)</span>
-</label>
+    <input
+        type="number"
+        id="preco"
+        step="0.01"
+        min="0"
+        placeholder="Ex.: 39.90"
+    >
 
-<textarea
-    id="descricao"
-    placeholder="Ex.: Conjunto confortável em renda."
-></textarea>
 
-<!-- FOTO -->
+    <!-- ================================================= -->
+    <!-- ESTOQUE -->
+    <!-- ================================================= -->
 
-<label for="foto">
-    Link da foto
-    <span class="opcional">(opcional)</span>
-</label>
+    <label for="estoque">
 
-<input
-    type="url"
-    id="foto"
-    placeholder="Cole aqui o link da imagem do Cloudinary"
->
+        Quantidade em estoque
 
-<!-- PREVISUALIZAÇÃO -->
+        <span class="opcional">
+            (opcional)
+        </span>
 
-<div class="preview" id="preview">
-    <p><strong>Pré-visualização:</strong></p>
-    <img id="previewImagem" alt="Pré-visualização do produto">
+    </label>
+
+    <input
+        type="number"
+        id="estoque"
+        min="0"
+        step="1"
+        placeholder="Ex.: 10"
+    >
+
+
+    <!-- ================================================= -->
+    <!-- DESCRIÇÃO -->
+    <!-- ================================================= -->
+
+    <label for="descricao">
+
+        Descrição
+
+        <span class="opcional">
+            (opcional)
+        </span>
+
+    </label>
+
+    <textarea
+        id="descricao"
+        placeholder="Ex.: Conjunto confortável em renda."
+    ></textarea>
+
+
+    <!-- ================================================= -->
+    <!-- FOTO -->
+    <!-- ================================================= -->
+
+    <label>
+
+        📷 Foto do produto
+
+        <span class="opcional">
+            (opcional)
+        </span>
+
+    </label>
+
+
+    <div class="foto-area">
+
+        <p>
+            📁 Escolher foto do computador
+        </p>
+
+        <label class="botao-foto">
+
+            📁 Escolher Foto
+
+            <input
+                type="file"
+                id="arquivoFoto"
+                accept="image/*"
+            >
+
+        </label>
+
+
+        <div
+            id="uploadStatus"
+            class="upload-status"
+        >
+            ⏳ Enviando foto...
+        </div>
+
+
+        <div class="separador-foto">
+            — OU —
+        </div>
+
+
+        <label for="foto">
+
+            🔗 Colar link da imagem
+
+        </label>
+
+        <input
+            type="url"
+            id="foto"
+            placeholder="Cole aqui o link da imagem do Cloudinary"
+        >
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- PREVISUALIZAÇÃO -->
+    <!-- ================================================= -->
+
+    <div
+        class="preview"
+        id="preview"
+    >
+
+        <p>
+            <strong>
+                📷 Pré-visualização da foto:
+            </strong>
+        </p>
+
+        <img
+            id="previewImagem"
+            alt="Pré-visualização do produto"
+        >
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- TAMANHOS -->
+    <!-- ================================================= -->
+
+    <label>
+
+        Tamanhos disponíveis
+
+        <span class="opcional">
+            (opcional)
+        </span>
+
+    </label>
+
+
+    <div class="tamanhos">
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="Único"
+            >
+            Único
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="PP"
+            >
+            PP
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="P"
+            >
+            P
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="M"
+            >
+            M
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="G"
+            >
+            G
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="GG"
+            >
+            GG
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="XG"
+            >
+            XG
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="XX"
+            >
+            XX
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="EG"
+            >
+            EG
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="48"
+            >
+            48
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="50"
+            >
+            50
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="52"
+            >
+            52
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="54"
+            >
+            54
+        </label>
+
+
+        <label>
+            <input
+                type="checkbox"
+                value="56"
+            >
+            56
+        </label>
+
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- BOTÃO PRINCIPAL -->
+    <!-- ================================================= -->
+
+    <button
+        type="button"
+        id="botao-cadastrar"
+    >
+        💾 Cadastrar Produto
+    </button>
+
+
+    <!-- ================================================= -->
+    <!-- BOTÃO CANCELAR EDIÇÃO -->
+    <!-- ================================================= -->
+
+    <button
+        type="button"
+        id="botao-cancelar"
+        class="cancelar"
+        style="display:none;"
+    >
+        ❌ Cancelar edição
+    </button>
+
+
+    <div id="mensagem"></div>
+
+
+    <!-- ================================================= -->
+    <!-- VOLTAR -->
+    <!-- ================================================= -->
+
+    <button
+        type="button"
+        class="voltar"
+        onclick="window.location.href='index.html'"
+    >
+        🛍️ Voltar para a Loja
+    </button>
+
+
 </div>
 
-<!-- TAMANHOS -->
-
-<label>
-    Tamanhos disponíveis
-    <span class="opcional">(opcional)</span>
-</label>
-
-<div class="tamanhos">
-
-    <label>
-        <input type="checkbox" value="Único">
-        Único
-    </label>
-
-    <label>
-        <input type="checkbox" value="PP">
-        PP
-    </label>
-
-    <label>
-        <input type="checkbox" value="P">
-        P
-    </label>
-
-    <label>
-        <input type="checkbox" value="M">
-        M
-    </label>
-
-    <label>
-        <input type="checkbox" value="G">
-        G
-    </label>
-
-    <label>
-        <input type="checkbox" value="GG">
-        GG
-    </label>
-
-    <label>
-        <input type="checkbox" value="XG">
-        XG
-    </label>
-
-    <label>
-        <input type="checkbox" value="XX">
-        XX
-    </label>
-
-    <label>
-        <input type="checkbox" value="EG">
-        EG
-    </label>
-
-    <label>
-        <input type="checkbox" value="48">
-        48
-    </label>
-
-    <label>
-        <input type="checkbox" value="50">
-        50
-    </label>
-
-    <label>
-        <input type="checkbox" value="52">
-        52
-    </label>
-
-    <label>
-        <input type="checkbox" value="54">
-        54
-    </label>
-
-    <label>
-        <input type="checkbox" value="56">
-        56
-    </label>
-
-</div>
-
-<!-- BOTÃO -->
-
-<button
-    type="button"
-    id="botao-cadastrar">
-
-    💾 Cadastrar Produto
-
-</button>
-
-<div id="mensagem"></div>
-
-<!-- VOLTAR -->
-
-<button
-    type="button"
-    class="voltar"
-    onclick="window.location.href='index.html'">
-
-    🛍️ Voltar para a Loja
-
-</button>
-
-
-</div>
 
 <script type="module">
 
-import { initializeApp } from
-    "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+// =====================================================
+// FIREBASE
+// =====================================================
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
     getDatabase,
     ref,
     push,
-    set
-} from
-    "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+    set,
+    get
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
+
+// =====================================================
+// CONFIGURAÇÃO FIREBASE
+// =====================================================
+//
+// MANTENHA A MESMA CONFIGURAÇÃO QUE JÁ EXISTE
+// NO SEU cadastro.html ATUAL.
+//
+// NÃO ALTERE SEUS DADOS.
+// =====================================================
 
 const firebaseConfig = {
 
-    apiKey:
-        "AIzaSyCtNeIuSYRRP8xSgfda0KXHpuZwNtLrN7g",
+    apiKey: "AIzaSyCtNeIuSYRRP8xSgfda0KXHpuZwNtLrN7g",
 
     authDomain:
         "dabruale-moda-intima.firebaseapp.com",
@@ -358,67 +784,587 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app =
+    initializeApp(
+        firebaseConfig
+    );
 
-const database = getDatabase(app);
 
+const database =
+    getDatabase(app);
+
+
+// =====================================================
+// CONFIGURAÇÃO CLOUDINARY
+// =====================================================
+
+const CLOUDINARY_CLOUD_NAME =
+    "qpzkzjst";
+
+
+const CLOUDINARY_UPLOAD_PRESET =
+    "ml_default";
+
+
+// =====================================================
+// PEGAR ID DA URL
+// =====================================================
+
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const idProduto =
+    parametros.get("id");
+
+
+// =====================================================
+// ELEMENTOS
+// =====================================================
 
 const botao =
-    document.getElementById("botao-cadastrar");
+    document.getElementById(
+        "botao-cadastrar"
+    );
+
+
+const botaoCancelar =
+    document.getElementById(
+        "botao-cancelar"
+    );
+
 
 const mensagem =
-    document.getElementById("mensagem");
+    document.getElementById(
+        "mensagem"
+    );
+
 
 const campoFoto =
-    document.getElementById("foto");
+    document.getElementById(
+        "foto"
+    );
+
+
+const arquivoFoto =
+    document.getElementById(
+        "arquivoFoto"
+    );
+
 
 const preview =
-    document.getElementById("preview");
+    document.getElementById(
+        "preview"
+    );
+
 
 const previewImagem =
-    document.getElementById("previewImagem");
+    document.getElementById(
+        "previewImagem"
+    );
 
 
-// PRÉ-VISUALIZAÇÃO DA FOTO
+const uploadStatus =
+    document.getElementById(
+        "uploadStatus"
+    );
+
+
+const tituloPagina =
+    document.getElementById(
+        "titulo-pagina"
+    );
+
+
+const avisoEdicao =
+    document.getElementById(
+        "aviso-edicao"
+    );
+
+
+// =====================================================
+// PRÉ-VISUALIZAÇÃO DO LINK
+// =====================================================
 
 campoFoto.addEventListener(
     "input",
     function() {
 
-        const url =
-            campoFoto.value.trim();
-
-        if (url) {
-
-            previewImagem.src = url;
-
-            previewImagem.onload = function() {
-
-                preview.style.display = "block";
-
-            };
-
-            previewImagem.onerror = function() {
-
-                preview.style.display = "none";
-
-            };
-
-        } else {
-
-            preview.style.display = "none";
-
-        }
+        mostrarPreview(
+            campoFoto.value.trim()
+        );
 
     }
 );
 
 
-// CADASTRAR PRODUTO
+// =====================================================
+// ESCOLHER FOTO DO COMPUTADOR
+// =====================================================
+
+arquivoFoto.addEventListener(
+    "change",
+    async function() {
+
+        const arquivo =
+            arquivoFoto.files[0];
+
+
+        if (!arquivo) {
+
+            return;
+
+        }
+
+
+        // Verificar se é imagem
+
+        if (
+            !arquivo.type.startsWith(
+                "image/"
+            )
+        ) {
+
+            mostrarMensagem(
+                "❌ Escolha um arquivo de imagem.",
+                "erro"
+            );
+
+            arquivoFoto.value =
+                "";
+
+            return;
+
+        }
+
+
+        // Limite de 10 MB
+
+        if (
+            arquivo.size >
+            10 * 1024 * 1024
+        ) {
+
+            mostrarMensagem(
+                "❌ A imagem deve ter no máximo 10 MB.",
+                "erro"
+            );
+
+            arquivoFoto.value =
+                "";
+
+            return;
+
+        }
+
+
+        // Mostrar preview imediatamente
+
+        const imagemLocal =
+            URL.createObjectURL(
+                arquivo
+            );
+
+
+        mostrarPreview(
+            imagemLocal
+        );
+
+
+        // Enviar para Cloudinary
+
+        await enviarFotoCloudinary(
+            arquivo
+        );
+
+    }
+);
+
+
+// =====================================================
+// ENVIAR FOTO PARA CLOUDINARY
+// =====================================================
+
+async function enviarFotoCloudinary(
+    arquivo
+) {
+
+    uploadStatus.style.display =
+        "block";
+
+
+    uploadStatus.textContent =
+        "⏳ Enviando foto para o Cloudinary...";
+
+
+    try {
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "file",
+            arquivo
+        );
+
+
+        formData.append(
+            "upload_preset",
+            CLOUDINARY_UPLOAD_PRESET
+        );
+
+
+        const resposta =
+            await fetch(
+                "https://api.cloudinary.com/v1_1/" +
+                CLOUDINARY_CLOUD_NAME +
+                "/image/upload",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (
+            !resposta.ok ||
+            !dados.secure_url
+        ) {
+
+            console.error(
+                "Resposta Cloudinary:",
+                dados
+            );
+
+            throw new Error(
+                "Não foi possível enviar a imagem."
+            );
+
+        }
+
+
+        // Colocar automaticamente o link no campo
+
+        campoFoto.value =
+            dados.secure_url;
+
+
+        // Mostrar preview usando o link definitivo
+
+        mostrarPreview(
+            dados.secure_url
+        );
+
+
+        uploadStatus.textContent =
+            "✅ Foto enviada com sucesso!";
+
+
+        uploadStatus.style.background =
+            "#d4edda";
+
+
+        uploadStatus.style.color =
+            "#155724";
+
+
+        mostrarMensagem(
+            "✅ Foto enviada. Agora você pode salvar o produto.",
+            "sucesso"
+        );
+
+
+    }
+
+    catch (erro) {
+
+        console.error(
+            "Erro no upload:",
+            erro
+        );
+
+
+        uploadStatus.textContent =
+            "❌ Não foi possível enviar a foto.";
+
+
+        uploadStatus.style.background =
+            "#ffdddd";
+
+
+        uploadStatus.style.color =
+            "#900";
+
+
+        mostrarMensagem(
+            "❌ Erro ao enviar a foto para o Cloudinary.",
+            "erro"
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// MOSTRAR PREVIEW
+// =====================================================
+
+function mostrarPreview(url) {
+
+    if (!url) {
+
+        preview.style.display =
+            "none";
+
+        previewImagem.removeAttribute(
+            "src"
+        );
+
+        return;
+
+    }
+
+
+    previewImagem.src =
+        url;
+
+
+    previewImagem.onload =
+        function() {
+
+            preview.style.display =
+                "block";
+
+        };
+
+
+    previewImagem.onerror =
+        function() {
+
+            preview.style.display =
+                "none";
+
+        };
+
+}
+
+
+// =====================================================
+// CARREGAR PRODUTO PARA EDIÇÃO
+// =====================================================
+
+async function carregarProduto() {
+
+    if (!idProduto) {
+
+        return;
+
+    }
+
+
+    tituloPagina.textContent =
+        "✏️ Editar Produto";
+
+
+    avisoEdicao.style.display =
+        "block";
+
+
+    botao.textContent =
+        "💾 Salvar Alterações";
+
+
+    botaoCancelar.style.display =
+        "block";
+
+
+    try {
+
+        const produtoRef =
+            ref(
+                database,
+                "produtos/" +
+                idProduto
+            );
+
+
+        const snapshot =
+            await get(
+                produtoRef
+            );
+
+
+        if (!snapshot.exists()) {
+
+            mostrarMensagem(
+                "❌ Produto não encontrado.",
+                "erro"
+            );
+
+            return;
+
+        }
+
+
+        const produto =
+            snapshot.val();
+
+
+        // =================================================
+        // NOME
+        // =================================================
+
+        document
+            .getElementById("nome")
+            .value =
+            produto.nome ||
+            "";
+
+
+        // =================================================
+        // PREÇO
+        // =================================================
+
+        document
+            .getElementById("preco")
+            .value =
+            produto.preco ??
+            "";
+
+
+        // =================================================
+        // ESTOQUE
+        // =================================================
+
+        document
+            .getElementById("estoque")
+            .value =
+            produto.estoque ??
+            "";
+
+
+        // =================================================
+        // DESCRIÇÃO
+        // =================================================
+
+        document
+            .getElementById("descricao")
+            .value =
+            produto.descricao ||
+            "";
+
+
+        // =================================================
+        // FOTO
+        // =================================================
+
+        document
+            .getElementById("foto")
+            .value =
+            produto.foto ||
+            "";
+
+
+        // Mostrar foto atual
+
+        if (produto.foto) {
+
+            mostrarPreview(
+                produto.foto
+            );
+
+        }
+
+
+        // =================================================
+        // TAMANHOS
+        // =================================================
+
+        let tamanhosProduto =
+            [];
+
+
+        if (
+            Array.isArray(
+                produto.tamanhos
+            )
+        ) {
+
+            tamanhosProduto =
+                produto.tamanhos;
+
+        }
+
+        else if (
+            produto.tamanhos &&
+            typeof produto.tamanhos ===
+                "object"
+        ) {
+
+            tamanhosProduto =
+                Object.values(
+                    produto.tamanhos
+                );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                '.tamanhos input[type="checkbox"]'
+            )
+            .forEach(
+                function(checkbox) {
+
+                    checkbox.checked =
+                        tamanhosProduto.includes(
+                            checkbox.value
+                        );
+
+                }
+            );
+
+
+    }
+
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar produto:",
+            erro
+        );
+
+
+        mostrarMensagem(
+            "❌ Não foi possível carregar o produto.",
+            "erro"
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// CADASTRAR OU EDITAR
+// =====================================================
 
 botao.addEventListener(
     "click",
     async function() {
+
+
+        // =================================================
+        // PEGAR CAMPOS
+        // =================================================
 
         const nome =
             document
@@ -436,7 +1382,9 @@ botao.addEventListener(
 
 
         const estoqueCampo =
-            document.getElementById("estoque").value;
+            document
+                .getElementById("estoque")
+                .value;
 
 
         const descricao =
@@ -453,21 +1401,31 @@ botao.addEventListener(
                 .trim();
 
 
+        // =================================================
+        // TAMANHOS
+        // =================================================
+
         const tamanhos = [];
 
 
-        document.querySelectorAll(
-            '.tamanhos input[type="checkbox"]:checked'
-        ).forEach(function(checkbox) {
+        document
+            .querySelectorAll(
+                '.tamanhos input[type="checkbox"]:checked'
+            )
+            .forEach(
+                function(checkbox) {
 
-            tamanhos.push(
-                checkbox.value
+                    tamanhos.push(
+                        checkbox.value
+                    );
+
+                }
             );
 
-        });
 
-
-        // NOME É OBRIGATÓRIO
+        // =================================================
+        // VALIDAR NOME
+        // =================================================
 
         if (!nome) {
 
@@ -476,11 +1434,18 @@ botao.addEventListener(
                 "erro"
             );
 
+            document
+                .getElementById("nome")
+                .focus();
+
             return;
+
         }
 
 
-        // PREÇO É OBRIGATÓRIO
+        // =================================================
+        // VALIDAR PREÇO
+        // =================================================
 
         if (
             isNaN(preco) ||
@@ -492,21 +1457,37 @@ botao.addEventListener(
                 "erro"
             );
 
+            document
+                .getElementById("preco")
+                .focus();
+
             return;
+
         }
 
 
-        // ESTOQUE É OPCIONAL
+        // =================================================
+        // ESTOQUE
+        // =================================================
 
-        let estoque = null;
+        let estoque =
+            null;
 
-        if (estoqueCampo !== "") {
+
+        if (
+            estoqueCampo !== ""
+        ) {
 
             const estoqueDigitado =
-                parseInt(estoqueCampo);
+                parseInt(
+                    estoqueCampo
+                );
+
 
             if (
-                isNaN(estoqueDigitado) ||
+                isNaN(
+                    estoqueDigitado
+                ) ||
                 estoqueDigitado < 0
             ) {
 
@@ -516,101 +1497,156 @@ botao.addEventListener(
                 );
 
                 return;
+
             }
 
-            estoque = estoqueDigitado;
+
+            estoque =
+                estoqueDigitado;
+
         }
 
 
-        botao.disabled = true;
+        // =================================================
+        // DESABILITAR BOTÃO
+        // =================================================
 
-        botao.textContent =
-            "⏳ Salvando...";
+        botao.disabled =
+            true;
+
+
+        if (idProduto) {
+
+            botao.textContent =
+                "⏳ Salvando alterações...";
+
+        }
+
+        else {
+
+            botao.textContent =
+                "⏳ Salvando...";
+
+        }
 
 
         try {
 
-            const produtosRef =
-                ref(
-                    database,
-                    "produtos"
-                );
 
-
-            const novoProdutoRef =
-                push(produtosRef);
-
+            // =================================================
+            // PRODUTO
+            // =================================================
 
             const novoProduto = {
 
-                nome: nome,
+                nome:
+                    nome,
 
-                preco: preco,
+                preco:
+                    preco,
 
-                tamanhos: tamanhos,
+                tamanhos:
+                    tamanhos,
 
-                estoque: estoque,
+                estoque:
+                    estoque,
 
-                descricao: descricao,
+                descricao:
+                    descricao,
 
-                foto: foto,
+                foto:
+                    foto,
 
-                ativo: true
+                ativo:
+                    true
 
             };
 
 
-            await set(
-                novoProdutoRef,
-                novoProduto
-            );
+            // =================================================
+            // EDITAR PRODUTO EXISTENTE
+            // =================================================
+
+            if (idProduto) {
+
+                const produtoRef =
+                    ref(
+                        database,
+                        "produtos/" +
+                        idProduto
+                    );
 
 
-            mostrarMensagem(
-                "✅ Produto cadastrado com sucesso no Firebase!",
-                "sucesso"
-            );
+                await set(
+                    produtoRef,
+                    novoProduto
+                );
 
 
-            // LIMPAR CAMPOS
-
-            document
-                .getElementById("nome")
-                .value = "";
-
-            document
-                .getElementById("preco")
-                .value = "";
-
-            document
-                .getElementById("estoque")
-                .value = "";
-
-            document
-                .getElementById("descricao")
-                .value = "";
-
-            document
-                .getElementById("foto")
-                .value = "";
-
-            preview.style.display = "none";
+                mostrarMensagem(
+                    "✅ Produto alterado com sucesso!",
+                    "sucesso"
+                );
 
 
-            document.querySelectorAll(
-                '.tamanhos input[type="checkbox"]'
-            ).forEach(function(checkbox) {
+                // Voltar para a loja após salvar
 
-                checkbox.checked = false;
+                setTimeout(
+                    function() {
 
-            });
+                        window.location.href =
+                            "index.html";
+
+                    },
+                    1000
+                );
+
+
+            }
+
+
+            // =================================================
+            // CADASTRAR NOVO PRODUTO
+            // =================================================
+
+            else {
+
+                const produtosRef =
+                    ref(
+                        database,
+                        "produtos"
+                    );
+
+
+                const novoProdutoRef =
+                    push(
+                        produtosRef
+                    );
+
+
+                await set(
+                    novoProdutoRef,
+                    novoProduto
+                );
+
+
+                mostrarMensagem(
+                    "✅ Produto cadastrado com sucesso no Firebase!",
+                    "sucesso"
+                );
+
+
+                limparFormulario();
+
+            }
+
 
         }
 
         catch (erro) {
 
             console.error(
-                "Erro ao cadastrar:",
+                "Erro ao salvar produto:",
                 erro
             );
 
@@ -625,10 +1661,23 @@ botao.addEventListener(
 
         finally {
 
-            botao.disabled = false;
+            botao.disabled =
+                false;
 
-            botao.textContent =
-                "💾 Cadastrar Produto";
+
+            if (idProduto) {
+
+                botao.textContent =
+                    "💾 Salvar Alterações";
+
+            }
+
+            else {
+
+                botao.textContent =
+                    "💾 Cadastrar Produto";
+
+            }
 
         }
 
@@ -636,7 +1685,96 @@ botao.addEventListener(
 );
 
 
+// =====================================================
+// CANCELAR EDIÇÃO
+// =====================================================
+
+botaoCancelar.addEventListener(
+    "click",
+    function() {
+
+        window.location.href =
+            "index.html";
+
+    }
+);
+
+
+// =====================================================
+// LIMPAR FORMULÁRIO
+// =====================================================
+
+function limparFormulario() {
+
+
+    document
+        .getElementById("nome")
+        .value =
+        "";
+
+
+    document
+        .getElementById("preco")
+        .value =
+        "";
+
+
+    document
+        .getElementById("estoque")
+        .value =
+        "";
+
+
+    document
+        .getElementById("descricao")
+        .value =
+        "";
+
+
+    document
+        .getElementById("foto")
+        .value =
+        "";
+
+
+    document
+        .getElementById("arquivoFoto")
+        .value =
+        "";
+
+
+    uploadStatus.style.display =
+        "none";
+
+
+    preview.style.display =
+        "none";
+
+
+    previewImagem.removeAttribute(
+        "src"
+    );
+
+
+    document
+        .querySelectorAll(
+            '.tamanhos input[type="checkbox"]'
+        )
+        .forEach(
+            function(checkbox) {
+
+                checkbox.checked =
+                    false;
+
+            }
+        );
+
+}
+
+
+// =====================================================
 // MENSAGEM
+// =====================================================
 
 function mostrarMensagem(
     texto,
@@ -646,11 +1784,14 @@ function mostrarMensagem(
     mensagem.style.display =
         "block";
 
+
     mensagem.textContent =
         texto;
 
 
-    if (tipo === "sucesso") {
+    if (
+        tipo === "sucesso"
+    ) {
 
         mensagem.style.background =
             "#d4edda";
@@ -658,7 +1799,9 @@ function mostrarMensagem(
         mensagem.style.color =
             "#155724";
 
-    } else {
+    }
+
+    else {
 
         mensagem.style.background =
             "#ffdddd";
@@ -670,7 +1813,16 @@ function mostrarMensagem(
 
 }
 
+
+// =====================================================
+// INICIAR
+// =====================================================
+
+carregarProduto();
+
+
 </script>
+
 
 </body>
 
