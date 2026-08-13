@@ -613,7 +613,37 @@ function mostrarTodosProdutos() {
     }
 
 }
+// =====================================================
+// GERAR CÓDIGO DO PRODUTO PARA O LINK
+// =====================================================
 
+function gerarCodigoProduto(nome) {
+
+    return nome
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "")
+        .trim();
+
+}
+
+
+// =====================================================
+// ABRIR PRODUTO INDIVIDUAL
+// =====================================================
+
+function abrirProduto(nome) {
+
+    const codigo =
+        gerarCodigoProduto(nome);
+
+    window.location.href =
+        window.location.pathname +
+        "?produto=" +
+        encodeURIComponent(codigo);
+
+}
 
 // =====================================================
 // ABRIR PRODUTO INDIVIDUAL
@@ -644,7 +674,7 @@ function mostrarProdutoIndividual() {
     const produto =
         produtos.find(function(item) {
 
-            return item.id === produtoId;
+          return gerarCodigoProduto(item.nome) === produtoId;
 
         });
 
