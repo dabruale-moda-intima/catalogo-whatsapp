@@ -99,6 +99,39 @@ const produtoId =
 
 
 // =====================================================
+// GERAR CÓDIGO DO PRODUTO PARA O LINK
+// =====================================================
+
+function gerarCodigoProduto(nome) {
+
+    return String(nome || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "")
+        .trim();
+
+}
+
+
+// =====================================================
+// ABRIR PRODUTO INDIVIDUAL
+// =====================================================
+
+function abrirProduto(nome) {
+
+    const codigo =
+        gerarCodigoProduto(nome);
+
+    window.location.href =
+        window.location.pathname +
+        "?produto=" +
+        encodeURIComponent(codigo);
+
+}
+
+
+// =====================================================
 // CARREGAR PRODUTOS DO FIREBASE
 // =====================================================
 
@@ -170,7 +203,8 @@ onValue(produtosRef, function(snapshot) {
 
             produtos.push({
 
-                id: id,
+                id:
+                    id,
 
                 nome:
                     produto.nome ||
@@ -580,7 +614,8 @@ function mostrarTodosProdutos() {
 
 
         // =================================================
-        // NÃO EXISTE MAIS "VER PRODUTO"
+        // NÃO EXISTE "VER PRODUTO"
+        // FOTO E NOME ABREM O PRODUTO
         // =================================================
 
 
@@ -605,7 +640,6 @@ function mostrarTodosProdutos() {
             "🛒 Meu Carrinho";
 
 
-        // garantir que fique depois dos produtos
         telaProdutos.appendChild(
             botaoCarrinho
         );
@@ -613,38 +647,6 @@ function mostrarTodosProdutos() {
     }
 
 }
-// =====================================================
-// GERAR CÓDIGO DO PRODUTO PARA O LINK
-// =====================================================
-
-function gerarCodigoProduto(nome) {
-
-    return nome
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "")
-        .trim();
-
-}
-
-
-// =====================================================
-// ABRIR PRODUTO INDIVIDUAL
-// =====================================================
-
-function abrirProduto(nome) {
-
-    const codigo =
-        gerarCodigoProduto(nome);
-
-    window.location.href =
-        window.location.pathname +
-        "?produto=" +
-        encodeURIComponent(codigo);
-
-}
-
 
 
 // =====================================================
@@ -658,10 +660,20 @@ function mostrarProdutoIndividual() {
     }
 
 
+    // =================================================
+    // ENCONTRAR PRODUTO
+    // ACEITA:
+    // 1. ID ANTIGO DO FIREBASE
+    // 2. CÓDIGO NOVO DO NOME
+    // =================================================
+
     const produto =
         produtos.find(function(item) {
 
-          return gerarCodigoProduto(item.nome) === produtoId;
+            return (
+                item.id === produtoId ||
+                gerarCodigoProduto(item.nome) === produtoId
+            );
 
         });
 
@@ -677,7 +689,6 @@ function mostrarProdutoIndividual() {
 
 
     // =================================================
-    // MUITO IMPORTANTE:
     // TIRAR O GRID DA PÁGINA INDIVIDUAL
     // =================================================
 
