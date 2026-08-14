@@ -543,42 +543,8 @@ function mostrarTodosProdutos() {
             );
 
         }
-        // =================================================
-        // BOTÃO EDITAR PRODUTO
-        // =================================================
-
-        const botaoEditar =
-            document.createElement("button");
-
-
-        botaoEditar.type =
-            "button";
-
-
-        botaoEditar.textContent =
-            "✏️ Editar";
-
-
-        botaoEditar.addEventListener(
-            "click",
-            function(event) {
-
-                event.stopPropagation();
-
-
-                window.location.href =
-                    "cadastro.html?id=" +
-                    encodeURIComponent(
-                        produto.id
-                    );
-
-            }
-        );
-
-
-        div.appendChild(
-            botaoEditar
-        );
+        
+          
 
         // =================================================
         // BOTÃO ADICIONAR AO CARRINHO
