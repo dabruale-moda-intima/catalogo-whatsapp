@@ -1,435 +1,145 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>DABRUALE MODA ÍNTIMA</title>
-
-<link
-    rel="stylesheet"
-    href="style.css"
->
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DABRUALE MODA ÍNTIMA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>DABRUALE MODA ÍNTIMA</h1>
+        <p>Escolha seus produtos favoritos</p>
+    </header>
 
-<h1>DABRUALE MODA ÍNTIMA</h1>
+    <main>
 
-<p>
-    Escolha seus produtos favoritos
-</p>
+        <section id="tela-produtos">
+            <h2>🛍️ Produtos</h2>
 
+            <div id="categorias" class="categorias-container">
+                <button class="btn-categoria ativo" data-categoria="Todos">Todos</button>
+                <button class="btn-categoria" data-categoria="Calcinhas">Calcinhas</button>
+                <button class="btn-categoria" data-categoria="Sutiãs">Sutiãs</button>
+                <button class="btn-categoria" data-categoria="Conjuntos">Conjuntos</button>
+                <button class="btn-categoria" data-categoria="Cintas">Cintas</button>
+                <button class="btn-categoria" data-categoria="Baby Doll">Baby Doll</button>
+                <button class="btn-categoria" data-categoria="Camisolas">Camisolas</button>
+                <button class="btn-categoria" data-categoria="Pijamas">Pijamas</button>
+                <button class="btn-categoria" data-categoria="Cuecas">Cuecas</button>
+                <button class="btn-categoria" data-categoria="Fitness">Fitness</button>
+                <button class="btn-categoria" data-categoria="Biquínis">Biquínis</button>
+                <button class="btn-categoria" data-categoria="Meias">Meias</button>
+            </div>
 
-</header>
+            <div id="produtos"></div>
 
-<main>
+            <button id="abrir-carrinho" type="button">🛒 Meu Carrinho</button>
+        </section>
 
 
-<!-- ================================================= -->
-<!-- TELA DE PRODUTOS -->
-<!-- ================================================= -->
+        <section id="tela-carrinho" style="display: none;">
+            <button id="voltar-produtos" type="button">← Continuar comprando</button>
 
-<section id="tela-produtos">
+            <h2>🛒 Meu Carrinho</h2>
 
-    <h2>🛍️ Produtos</h2>
+            <div id="itens-carrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
 
-    <div id="produtos"></div>
+            <div>
+                <strong>
+                    Total: R$ <span id="total-carrinho">0,00</span>
+                </strong>
+            </div>
 
-    <button
-        id="abrir-carrinho"
-        type="button"
-    >
-        🛒 Meu Carrinho
-    </button>
+            <br>
 
-</section>
+            <button id="ir-entrega" type="button">📦 Continuar para entrega</button>
+        </section>
 
 
+        <section id="tela-entrega" style="display: none;">
+            <button id="voltar-carrinho" type="button">← Voltar ao carrinho</button>
 
-<!-- ================================================= -->
-<!-- TELA DO CARRINHO -->
-<!-- ================================================= -->
+            <div id="dados-cliente">
+                <h2>📦 Dados para entrega</h2>
 
-<section
-    id="tela-carrinho"
-    style="display: none;"
->
+                <label for="cliente">Nome *</label>
+                <input type="text" id="cliente" placeholder="Digite seu nome">
 
-    <button
-        id="voltar-produtos"
-        type="button"
-    >
-        ← Continuar comprando
-    </button>
+                <label for="telefone">Telefone <span class="opcional">(opcional)</span></label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000">
 
+                <label for="email">E-mail <span class="opcional">(opcional)</span></label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com">
 
-    <h2>🛒 Meu Carrinho</h2>
+                <label for="rua">Rua *</label>
+                <input type="text" id="rua" placeholder="Digite o nome da rua">
 
+                <label for="numero">Número *</label>
+                <input type="text" id="numero" placeholder="Número da residência">
 
-    <div id="itens-carrinho">
+                <label for="bairro">Bairro *</label>
+                <input type="text" id="bairro" placeholder="Digite o bairro">
 
-        <p>
-            Seu carrinho está vazio.
-        </p>
+                <label for="cidade">Cidade *</label>
+                <input type="text" id="cidade" placeholder="Digite a cidade">
 
-    </div>
+                <label for="cep">CEP *</label>
+                <input type="text" id="cep" placeholder="00000-000">
 
+                <label for="pagamento">Forma de pagamento <span class="opcional">(opcional)</span></label>
+                <input type="text" id="pagamento" placeholder="Ex.: Pix, dinheiro, cartão">
 
-    <div>
+                <label for="observacao">Observação <span class="opcional">(opcional)</span></label>
+                <textarea id="observacao" placeholder="Alguma informação para o pedido?"></textarea>
+            </div>
 
-        <strong>
+            <button id="finalizar-whatsapp" type="button">📱 Finalizar pedido pelo WhatsApp</button>
+        </section>
 
-            Total:
-            R$
-            <span id="total-carrinho">
-                0,00
-            </span>
+    </main>
 
-        </strong>
+    <script>
+        const telaProdutos = document.getElementById("tela-produtos");
+        const telaCarrinho = document.getElementById("tela-carrinho");
+        const telaEntrega = document.getElementById("tela-entrega");
 
-    </div>
-
-
-    <br>
-
-
-    <button
-        id="ir-entrega"
-        type="button"
-    >
-        📦 Continuar para entrega
-    </button>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- TELA DE DADOS DA CLIENTE -->
-<!-- ================================================= -->
-
-<section
-    id="tela-entrega"
-    style="display: none;"
->
-
-
-    <button
-        id="voltar-carrinho"
-        type="button"
-    >
-        ← Voltar ao carrinho
-    </button>
-
-
-    <div id="dados-cliente">
-
-
-        <h2>
-            📦 Dados para entrega
-        </h2>
-
-
-        <label for="cliente">
-            Nome *
-        </label>
-
-        <input
-            type="text"
-            id="cliente"
-            placeholder="Digite seu nome"
-        >
-
-
-        <label for="telefone">
-
-            Telefone
-
-            <span class="opcional">
-                (opcional)
-            </span>
-
-        </label>
-
-        <input
-            type="tel"
-            id="telefone"
-            placeholder="(00) 00000-0000"
-        >
-
-
-        <label for="email">
-
-            E-mail
-
-            <span class="opcional">
-                (opcional)
-            </span>
-
-        </label>
-
-        <input
-            type="email"
-            id="email"
-            placeholder="seuemail@exemplo.com"
-        >
-
-
-        <label for="rua">
-            Rua *
-        </label>
-
-        <input
-            type="text"
-            id="rua"
-            placeholder="Digite o nome da rua"
-        >
-
-
-        <label for="numero">
-            Número *
-        </label>
-
-        <input
-            type="text"
-            id="numero"
-            placeholder="Número da residência"
-        >
-
-
-        <label for="bairro">
-            Bairro *
-        </label>
-
-        <input
-            type="text"
-            id="bairro"
-            placeholder="Digite o bairro"
-        >
-
-
-        <label for="cidade">
-            Cidade *
-        </label>
-
-        <input
-            type="text"
-            id="cidade"
-            placeholder="Digite a cidade"
-        >
-
-
-        <label for="cep">
-            CEP *
-        </label>
-
-        <input
-            type="text"
-            id="cep"
-            placeholder="00000-000"
-        >
-
-
-        <label for="pagamento">
-
-            Forma de pagamento
-
-            <span class="opcional">
-                (opcional)
-            </span>
-
-        </label>
-
-        <input
-            type="text"
-            id="pagamento"
-            placeholder="Ex.: Pix, dinheiro, cartão"
-        >
-
-
-        <label for="observacao">
-
-            Observação
-
-            <span class="opcional">
-                (opcional)
-            </span>
-
-        </label>
-
-        <textarea
-            id="observacao"
-            placeholder="Alguma informação para o pedido?"
-        ></textarea>
-
-
-    </div>
-
-
-    <button
-        id="finalizar-whatsapp"
-        type="button"
-    >
-        📱 Finalizar pedido pelo WhatsApp
-    </button>
-
-
-</section>
-
-
-</main>
-
-<!-- ===================================================== -->
-
-<!-- NAVEGAÇÃO ENTRE AS TELAS -->
-
-<!-- ===================================================== -->
-
-<script>
-
-    const telaProdutos =
-        document.getElementById(
-            "tela-produtos"
-        );
-
-    const telaCarrinho =
-        document.getElementById(
-            "tela-carrinho"
-        );
-
-    const telaEntrega =
-        document.getElementById(
-            "tela-entrega"
-        );
-
-
-    const abrirCarrinho =
-        document.getElementById(
-            "abrir-carrinho"
-        );
-
-
-    const voltarProdutos =
-        document.getElementById(
-            "voltar-produtos"
-        );
-
-
-    const irEntrega =
-        document.getElementById(
-            "ir-entrega"
-        );
-
-
-    const voltarCarrinho =
-        document.getElementById(
-            "voltar-carrinho"
-        );
-
-
-    // =================================================
-    // PRODUTOS → CARRINHO
-    // =================================================
-
-    abrirCarrinho.addEventListener(
-        "click",
-        function() {
-
-            telaProdutos.style.display =
-                "none";
-
-            telaCarrinho.style.display =
-                "block";
-
+        const abrirCarrinho = document.getElementById("abrir-carrinho");
+        const voltarProdutos = document.getElementById("voltar-produtos");
+        const irEntrega = document.getElementById("ir-entrega");
+        const voltarCarrinho = document.getElementById("voltar-carrinho");
+
+        abrirCarrinho.addEventListener("click", function() {
+            telaProdutos.style.display = "none";
+            telaCarrinho.style.display = "block";
             window.scrollTo(0, 0);
+        });
 
-        }
-    );
-
-
-    // =================================================
-    // CARRINHO → PRODUTOS
-    // =================================================
-
-    voltarProdutos.addEventListener(
-        "click",
-        function() {
-
-            telaCarrinho.style.display =
-                "none";
-
-            telaProdutos.style.display =
-                "block";
-
+        voltarProdutos.addEventListener("click", function() {
+            telaCarrinho.style.display = "none";
+            telaProdutos.style.display = "block";
             window.scrollTo(0, 0);
+        });
 
-        }
-    );
-
-
-    // =================================================
-    // CARRINHO → ENTREGA
-    // =================================================
-
-    irEntrega.addEventListener(
-        "click",
-        function() {
-
-            telaCarrinho.style.display =
-                "none";
-
-            telaEntrega.style.display =
-                "block";
-
+        irEntrega.addEventListener("click", function() {
+            telaCarrinho.style.display = "none";
+            telaEntrega.style.display = "block";
             window.scrollTo(0, 0);
+        });
 
-        }
-    );
-
-
-    // =================================================
-    // ENTREGA → CARRINHO
-    // =================================================
-
-    voltarCarrinho.addEventListener(
-        "click",
-        function() {
-
-            telaEntrega.style.display =
-                "none";
-
-            telaCarrinho.style.display =
-                "block";
-
+        voltarCarrinho.addEventListener("click", function() {
+            telaEntrega.style.display = "none";
+            telaCarrinho.style.display = "block";
             window.scrollTo(0, 0);
+        });
+    </script>
 
-        }
-    );
-
-</script>
-
-<!-- ===================================================== -->
-
-<!-- SCRIPT PRINCIPAL -->
-
-<!-- ===================================================== -->
-
-<script
-    type="module"
-    src="script.js"
-></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 
